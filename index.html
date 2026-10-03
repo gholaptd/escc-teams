@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#2e7d32">
+  <title>East Side Cricket Club – Team Picker</title>
+</head>
+<body>
+  <header>
+    <h1>🏏 East Side Cricket Club</h1>
+    <ol class="progress" id="progress"></ol>
+  </header>
+
+  <main>
+    <section class="step" data-step="0">
+      <h2>Who's playing today?</h2>
+      <p class="hint">Tap to toggle. <span id="count"></span></p>
+      <div class="quick">
+        <button class="link" id="allBtn">Select all</button>
+        <button class="link" id="noneBtn">Clear</button>
+      </div>
+      <div class="chips" id="attendance"></div>
+      <form id="guestForm" class="guest">
+        <input id="guestName" type="text" placeholder="Add a guest for today" autocomplete="off" enterkeyhint="done">
+        <button type="submit">Add</button>
+      </form>
+    </section>
+
+    <section class="step" data-step="1" hidden>
+      <h2>Player categories</h2>
+      <p class="hint" id="summary"></p>
+      <ul class="list" id="categories"></ul>
+    </section>
+
+    <section class="step" data-step="2" hidden>
+      <h2>Starting members <small>(optional)</small></h2>
+      <p class="hint">Put captains or anyone who must be on a team. Everyone on "Random" is shuffled in.</p>
+      <button class="link" id="clearLocksBtn">Reset all to Random</button>
+      <ul class="list" id="locks"></ul>
+    </section>
+
+    <section class="step" data-step="3" hidden>
+      <h2>Teams</h2>
+      <div class="teams">
+        <div class="team a"><h3 id="titleA"></h3><ol id="teamA"></ol></div>
+        <div class="team b"><h3 id="titleB"></h3><ol id="teamB"></ol></div>
+      </div>
+      <p class="toss" id="toss"></p>
+      <div class="actions">
+        <button class="secondary" id="reshuffleBtn">🔀 Reshuffle</button>
+        <button id="shareBtn">📤 Share</button>
+      </div>
+    </section>
+  </main>
+
+  <nav class="footer">
+    <button class="secondary" id="backBtn">Back</button>
+    <button id="nextBtn">Next</button>
+  </nav>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
